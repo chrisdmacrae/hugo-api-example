@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+  {{ $filter := (printf "%s%s%s" "FIND(\"" .File.Path "\",{related_author})") }}
+  {{ $reviews := getJSON "https://api.airtable.com/v0/appomSEe6FuH1qAH9/Imported%20table?api_key=keygTdkqrK0MZs2uw&filterByFormula=" $filter }}
+
+  {{ range $reviews }}
+    {{ . }}
+  {{ end }}
+</body>
+</html>

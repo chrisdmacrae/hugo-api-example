@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+  {{ $reviews := getJSON "https://api.airtable.com/v0/appomSEe6FuH1qAH9/Imported%20table?api_key=keygTdkqrK0MZs2uw" }}
+  {{ $reviews.records | len }}
+</body>
+</html>
